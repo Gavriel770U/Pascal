@@ -10,5 +10,6 @@ class Main
     public static void main(String[] args)
     { 
         println("Welcome to Pascal!!!");   
+        new PascalFrame();
     }
 }

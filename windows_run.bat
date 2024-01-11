@@ -1,2 +1,2 @@
 cd build
-java -jar GCMD.jar
+java -jar Pascal.jar
