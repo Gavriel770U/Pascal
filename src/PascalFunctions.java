@@ -1,5 +1,15 @@
 public class PascalFunctions
 {
+    private final static String SPACE = " ";
+    private final static int ZERO = 0;
+    private final static int ONE_ELEM = 0;
+    private final static int INC = 1;
+    private final static int GET_HALF = 2;
+    private final static int FIRST_PASCAL_VAL = 1;
+    private final static int FIRST_IDX = 0;
+    private final static int SECOND_IDX = 1;
+    private final static int THIRD_IDX = 2;
+
     public static<T> void println(T info)
     {
         System.out.println(info);
@@ -22,27 +32,27 @@ public class PascalFunctions
         // Thus, we get the formula:
         // Sn = 0.5*n² + 0.5*n = (n * (n + 1)) / 2
 
-        final int ARR_LENGTH = (int)((pascalTriangleHeight * (pascalTriangleHeight+1)) / 2);
+        final int ARR_LENGTH = (int)((pascalTriangleHeight * (pascalTriangleHeight + INC)) / GET_HALF);
         int i = 2;
         int j = 0;
         int offset = 0;
         int nextOffset = 0;
 
-        if(ARR_LENGTH <= 0)
+        if(ARR_LENGTH <= ZERO)
         {
             return null;
         }
 
         int[] arr = new int[ARR_LENGTH];
-        arr[0] = 1;
+        arr[FIRST_IDX] = FIRST_PASCAL_VAL;
 
-        if(1 == ARR_LENGTH)
+        if(ONE_ELEM == ARR_LENGTH)
         {
             return arr;
         }
 
-        arr[1] = 1;
-        arr[2] = 1;
+        arr[SECOND_IDX] = FIRST_PASCAL_VAL;
+        arr[THIRD_IDX] = FIRST_PASCAL_VAL;
         
         // 1
         // 1 1
@@ -65,12 +75,12 @@ public class PascalFunctions
 
         for(i = 0; i < pascalArr.length; i++)
         {
-            print(pascalArr[i]+" ");
+            print(pascalArr[i] + SPACE);
             
             progress++;
-            if(0 == progress % level)
+            if(ZERO == progress % level)
             {
-                println("");
+                println(SPACE);
                 level++;
                 progress = 0;
             }
