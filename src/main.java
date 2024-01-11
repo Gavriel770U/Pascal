@@ -11,7 +11,5 @@ class Main
     { 
         println("Welcome to Pascal!!!"); 
         new PascalFrame();
-
-        // for(;;);
     }
 }
