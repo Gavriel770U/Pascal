@@ -2,7 +2,7 @@ enum Settings
 {
     WIDTH (800),
     HEIGHT (600),
-    PIXEL_SIZE (5);
+    PIXEL_SIZE (1);
 
     public final int ivalue;
 
