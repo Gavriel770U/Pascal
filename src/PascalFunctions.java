@@ -1,6 +1,16 @@
 public class PascalFunctions
 {
-    int[] getPascalArray(int pascalTriangleHeight)
+    public static<T> void println(T info)
+    {
+        System.out.println(info);
+    }
+        
+    public static<T> void print(T info)
+    {
+        System.out.print(info);
+    }
+
+    public static int[] getPascalArray(int pascalTriangleHeight)
     {
         // the array length is actually the Nth element of the geometric series
         // 1+2+3+...+n
@@ -13,7 +23,11 @@ public class PascalFunctions
         // Sn = 0.5*n² + 0.5*n = (n * (n + 1)) / 2
 
         final int ARR_LENGTH = (int)((pascalTriangleHeight * (pascalTriangleHeight+1)) / 2);
-        
+        int i = 2;
+        int j = 0;
+        int offset = 0;
+        int nextOffset = 0;
+
         if(ARR_LENGTH <= 0)
         {
             return null;
@@ -29,13 +43,21 @@ public class PascalFunctions
 
         arr[1] = 1;
         arr[2] = 1;
-
-
         
-        return null;
+        // 1
+        // 1 1
+        // 1 2 1
+        // 1 3 3 1
+        
+        return arr;
     }
 
-    void modPascalArray(int[] pascalArr, int mod)
+    public static void modPascalArray(int[] pascalArr, int mod)
+    {
+
+    }
+
+    public static void printPascalArray(int[] pascalArr)
     {
 
     }
