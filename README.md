@@ -2,7 +2,7 @@
 ## Fractals using Pascle's triangle.
 
 ## Pascal's Triangle MOD 2 (Sierpinski Triangle)
-![Sierpinski Triangle](image.png)
+![Sierpinski Triangle](assets/triangle_pixelsize1_mod2.png)
 
 ________________________________________________________________
 
