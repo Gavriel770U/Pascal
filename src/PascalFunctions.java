@@ -59,6 +59,21 @@ public class PascalFunctions
 
     public static void printPascalArray(int[] pascalArr)
     {
+        int i = 0;
+        int progress = 0;
+        int level = 1;
 
+        for(i = 0; i < pascalArr.length; i++)
+        {
+            print(pascalArr[i]+" ");
+            
+            progress++;
+            if(0 == progress % level)
+            {
+                println("");
+                level++;
+                progress = 0;
+            }
+        }
     }
 }
