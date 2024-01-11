@@ -7,6 +7,7 @@ public class PascalFrame extends JFrame
         this.setSize(Settings.WIDTH.ivalue, Settings.HEIGHT.ivalue);
         this.setVisible(true);
         this.setLayout(getLayout());
-        
+        this.setTitle("Gavriel's Pascal GUI Frame");
+        this.setResizable(false);
     }    
 }
