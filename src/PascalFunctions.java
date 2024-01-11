@@ -21,7 +21,7 @@ public class PascalFunctions
         System.out.print(info);
     }
 
-    public static int[] getPascalArray(int pascalTriangleHeight)
+    public static long[] getPascalArray(int pascalTriangleHeight)
     {
         // the array length is actually the Nth element of the geometric series
         // 1+2+3+...+n
@@ -43,7 +43,7 @@ public class PascalFunctions
             return null;
         }
 
-        int[] arr = new int[ARR_LENGTH];
+        long[] arr = new long[ARR_LENGTH];
         arr[FIRST_IDX] = FIRST_PASCAL_VAL;
 
         if (ONE_ELEM == ARR_LENGTH)
@@ -76,7 +76,7 @@ public class PascalFunctions
         return arr;
     }
 
-    public static void modPascalArray(int[] pascalArr, int mod)
+    public static void modPascalArray(long[] pascalArr, int mod)
     {
         int i = 0;
 
@@ -86,7 +86,7 @@ public class PascalFunctions
         }
     }
 
-    public static void printPascalArray(int[] pascalArr)
+    public static void printPascalArray(long[] pascalArr)
     {
         int i = 0;
         int progress = 0;

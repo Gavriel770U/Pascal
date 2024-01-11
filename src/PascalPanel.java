@@ -22,10 +22,11 @@ public class PascalPanel extends JPanel
     protected void paintComponent(Graphics graphics)
     {
         super.paintComponent(graphics);
-        
         int normalizedHeight = Settings.HEIGHT.ivalue / Settings.PIXEL_SIZE.ivalue;
 
-        int[] pascalArr = PascalFunctions.getPascalArray(normalizedHeight);
+        long[] pascalArr = PascalFunctions.getPascalArray(normalizedHeight);
+        // PascalFunctions.printPascalArray(pascalArr);
+        
         PascalFunctions.modPascalArray(pascalArr, this.mod);
         int i = 0;
         int progress = 0;
