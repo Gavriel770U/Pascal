@@ -10,7 +10,7 @@ class Main
     public static void main(String[] args)
     { 
         println("Welcome to Pascal!!!"); 
-        PascalFunctions.printPascalArray(PascalFunctions.getPascalArray(2));  
+        PascalFunctions.printPascalArray(PascalFunctions.getPascalArray(10));  
         // new PascalFrame();
 
         for(;;);

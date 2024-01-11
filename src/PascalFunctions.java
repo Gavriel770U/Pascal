@@ -4,6 +4,7 @@ public class PascalFunctions
     private final static int ZERO = 0;
     private final static int ONE_ELEM = 0;
     private final static int INC = 1;
+    private final static int DEC = 1;
     private final static int GET_HALF = 2;
     private final static int FIRST_PASCAL_VAL = 1;
     private final static int FIRST_IDX = 0;
@@ -33,10 +34,9 @@ public class PascalFunctions
         // Sn = 0.5*n² + 0.5*n = (n * (n + 1)) / 2
 
         final int ARR_LENGTH = (int)((pascalTriangleHeight * (pascalTriangleHeight + INC)) / GET_HALF);
-        int i = 2;
-        int j = 0;
-        int offset = 0;
-        int nextOffset = 0;
+        int i = 3;
+        int progress = 0;
+        int level = 3;
 
         if(ARR_LENGTH <= ZERO)
         {
@@ -53,11 +53,25 @@ public class PascalFunctions
 
         arr[SECOND_IDX] = FIRST_PASCAL_VAL;
         arr[THIRD_IDX] = FIRST_PASCAL_VAL;
-        
-        // 1
-        // 1 1
-        // 1 2 1
-        // 1 3 3 1
+
+        for(; i < arr.length; i++)
+        {
+            if(ZERO == progress || level - DEC == progress)
+            {
+                arr[i] = FIRST_PASCAL_VAL;
+            }
+            else
+            {
+                arr[i] = arr[i - level] + arr[i - level + INC];
+            }
+
+            progress++;
+            if(ZERO == progress % level)
+            {
+                level++;
+                progress = 0;
+            }
+        }
         
         return arr;
     }
