@@ -82,7 +82,7 @@ public class PascalFunctions
 
         for (i = 0; i < pascalArr.length; i++)
         {
-            pascalArr[i] %= mod;
+            pascalArr[i] = (pascalArr[i] % mod + mod) % mod;
         }
     }
 
