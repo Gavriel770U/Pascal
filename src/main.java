@@ -11,8 +11,8 @@ class Main
     { 
         println("Welcome to Pascal!!!"); 
         PascalFunctions.printPascalArray(PascalFunctions.getPascalArray(10));  
-        // new PascalFrame();
+        new PascalFrame();
 
-        for(;;);
+        // for(;;);
     }
 }

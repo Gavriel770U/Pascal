@@ -38,7 +38,7 @@ public class PascalFunctions
         int progress = 0;
         int level = 3;
 
-        if(ARR_LENGTH <= ZERO)
+        if (ARR_LENGTH <= ZERO)
         {
             return null;
         }
@@ -46,7 +46,7 @@ public class PascalFunctions
         int[] arr = new int[ARR_LENGTH];
         arr[FIRST_IDX] = FIRST_PASCAL_VAL;
 
-        if(ONE_ELEM == ARR_LENGTH)
+        if (ONE_ELEM == ARR_LENGTH)
         {
             return arr;
         }
@@ -54,9 +54,9 @@ public class PascalFunctions
         arr[SECOND_IDX] = FIRST_PASCAL_VAL;
         arr[THIRD_IDX] = FIRST_PASCAL_VAL;
 
-        for(; i < arr.length; i++)
+        for (; i < arr.length; i++)
         {
-            if(ZERO == progress || level - DEC == progress)
+            if (ZERO == progress || level - DEC == progress)
             {
                 arr[i] = FIRST_PASCAL_VAL;
             }
@@ -66,7 +66,7 @@ public class PascalFunctions
             }
 
             progress++;
-            if(ZERO == progress % level)
+            if (ZERO == progress % level)
             {
                 level++;
                 progress = 0;
@@ -80,7 +80,7 @@ public class PascalFunctions
     {
         int i = 0;
 
-        for(i = 0; i < pascalArr.length; i++)
+        for (i = 0; i < pascalArr.length; i++)
         {
             pascalArr[i] %= mod;
         }
@@ -92,12 +92,12 @@ public class PascalFunctions
         int progress = 0;
         int level = 1;
 
-        for(i = 0; i < pascalArr.length; i++)
+        for (i = 0; i < pascalArr.length; i++)
         {
             print(pascalArr[i] + SPACE);
             
             progress++;
-            if(ZERO == progress % level)
+            if (ZERO == progress % level)
             {
                 println(SPACE);
                 level++;

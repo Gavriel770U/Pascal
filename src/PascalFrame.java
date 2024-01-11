@@ -10,5 +10,6 @@ public class PascalFrame extends JFrame
         add(new PascalPanel());
         setLayout(null);
         setResizable(false);
+        setBounds(0, 0, Settings.WIDTH.ivalue, Settings.HEIGHT.ivalue);
     }
 }
