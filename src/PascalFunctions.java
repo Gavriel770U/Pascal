@@ -78,7 +78,12 @@ public class PascalFunctions
 
     public static void modPascalArray(int[] pascalArr, int mod)
     {
+        int i = 0;
 
+        for(i = 0; i < pascalArr.length; i++)
+        {
+            pascalArr[i] %= mod;
+        }
     }
 
     public static void printPascalArray(int[] pascalArr)
