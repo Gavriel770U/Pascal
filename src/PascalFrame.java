@@ -8,9 +8,17 @@ public class PascalFrame extends JFrame
     {
         setTitle("Gavriel's Pascal Triangles GUI");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(Settings.WIDTH.ivalue, Settings.HEIGHT.ivalue));
+        setPreferredSize(new Dimension(Settings.FRAME_WIDTH.ivalue, Settings.FRAME_HEIGHT.ivalue));
         setLayout(new BorderLayout());
-        add(new PascalPanel());
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+      
+        JPanel graphicsPanel = new PascalPanel();
+        JPanel settingsPanel = new SettingsPanel();
+      
+        mainPanel.add(graphicsPanel);
+        mainPanel.add(settingsPanel);
+        add(mainPanel);
         setResizable(false);
         pack();
         setVisible(true);

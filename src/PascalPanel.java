@@ -10,7 +10,7 @@ public class PascalPanel extends JPanel
 
     public PascalPanel()
     {
-        setPreferredSize(new Dimension(Settings.WIDTH.ivalue, Settings.HEIGHT.ivalue));
+        setPreferredSize(new Dimension(Settings.GRAPHICS_WIDTH.ivalue, Settings.GRAPHICS_HEIGHT.ivalue));
         setDoubleBuffered(true);
         setBackground(Color.BLACK);
         setFocusable(true);
@@ -23,7 +23,7 @@ public class PascalPanel extends JPanel
     protected void paintComponent(Graphics graphics)
     {
         super.paintComponent(graphics);
-        int normalizedHeight = Settings.HEIGHT.ivalue / Settings.PIXEL_SIZE.ivalue;
+        int normalizedHeight = Settings.GRAPHICS_HEIGHT.ivalue / Settings.PIXEL_SIZE.ivalue;
 
         long[] pascalArr = PascalFunctions.getPascalArray(normalizedHeight);
         // PascalFunctions.printPascalArray(pascalArr);
@@ -32,7 +32,7 @@ public class PascalPanel extends JPanel
         int i = 0;
         int progress = 0;
         int level = 1;
-        int x = Settings.WIDTH.ivalue / 2 - Settings.PIXEL_SIZE.ivalue;
+        int x = Settings.GRAPHICS_WIDTH.ivalue / 2 - Settings.PIXEL_SIZE.ivalue;
         int y = 0;
 
         for (i = 0; i < pascalArr.length; i++)
@@ -55,7 +55,7 @@ public class PascalPanel extends JPanel
                 level++;
                 progress = 0;
                 y += Settings.PIXEL_SIZE.ivalue;
-                x = (Settings.WIDTH.ivalue / 2) - (Settings.PIXEL_SIZE.ivalue * (level / 2 + 1));
+                x = (Settings.GRAPHICS_WIDTH.ivalue / 2) - (Settings.PIXEL_SIZE.ivalue * (level / 2 + 1));
             }
         }
 
