@@ -1,4 +1,4 @@
-enum Settings
+public enum Settings
 {
     FRAME_WIDTH (800),
     FRAME_HEIGHT (600),
@@ -11,6 +11,8 @@ enum Settings
     MOD_SLIDER_MIN_MOD (0),
     MOD_SLIDER_MAX_MOD (100),
     MOD_SLIDER_INIT_MOD (2),
+    MOD_SLIDER_MINOR_TICKS_SPACING (10),
+    MOD_SLIDER_MAJOR_TICKS_SPACING (25),
     PIXEL_SIZE (1);
 
     public final int ivalue;
