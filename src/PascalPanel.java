@@ -19,10 +19,18 @@ public class PascalPanel extends JPanel
         this.mod = 2;
     }
 
+    public void setMod(int mod)
+    {
+        this.mod = mod;
+    }
+
     @Override
     protected void paintComponent(Graphics graphics)
     {
         super.paintComponent(graphics);
+
+        //TODO: synchronize the mod value of PascalPanel and SettingsPanel - VERY IMPORTANT!!!
+
         int normalizedHeight = Settings.GRAPHICS_HEIGHT.ivalue / Settings.PIXEL_SIZE.ivalue;
 
         long[] pascalArr = PascalFunctions.getPascalArray(normalizedHeight);
@@ -61,5 +69,4 @@ public class PascalPanel extends JPanel
 
         repaint();
     }
-
 }
