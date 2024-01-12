@@ -6,6 +6,11 @@ enum Settings
     GRAPHICS_HEIGHT (400),
     SETTINGS_WIDTH (800),
     SETTINGS_HEIGHT (200),
+    MOD_SLIDER_WIDTH (200),
+    MOD_SLIDER_HEIGHT (200),
+    MOD_SLIDER_MIN_MOD (0),
+    MOD_SLIDER_MAX_MOD (100),
+    MOD_SLIDER_INIT_MOD (2),
     PIXEL_SIZE (1);
 
     public final int ivalue;
