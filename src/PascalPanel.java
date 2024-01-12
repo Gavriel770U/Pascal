@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 
 public class PascalPanel extends JPanel
@@ -9,7 +10,7 @@ public class PascalPanel extends JPanel
 
     public PascalPanel()
     {
-        setSize(Settings.WIDTH.ivalue, Settings.HEIGHT.ivalue);
+        setPreferredSize(new Dimension(Settings.WIDTH.ivalue, Settings.HEIGHT.ivalue));
         setDoubleBuffered(true);
         setBackground(Color.BLACK);
         setFocusable(true);
