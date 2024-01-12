@@ -1,6 +1,11 @@
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
+
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 public class SettingsPanel extends JPanel
 {
@@ -10,6 +15,7 @@ public class SettingsPanel extends JPanel
         setDoubleBuffered(true);
         setBackground(Color.GRAY);
         setFocusable(true);
+        setLayout(new GridLayout(1, 2));
         requestFocusInWindow();
         add(new ModSlider (Settings.MOD_SLIDER_WIDTH.ivalue,
                           Settings.MOD_SLIDER_HEIGHT.ivalue,
@@ -18,5 +24,8 @@ public class SettingsPanel extends JPanel
                           Settings.MOD_SLIDER_INIT_MOD.ivalue
             )
         );
+
+        add(new JLabel("TODO: Add Color chooser For Each MOD Result"));
+
     }    
 }
