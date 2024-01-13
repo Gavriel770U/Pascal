@@ -6,10 +6,12 @@ import java.awt.Graphics;
 public class PascalPanel extends JPanel
 {
     private final static int ZERO = 0; 
+    private SharedResource modResource;
     private int mod;
 
-    public PascalPanel()
+    public PascalPanel(SharedResource modResource)
     {
+        this.modResource = modResource;
         setPreferredSize(new Dimension(Settings.GRAPHICS_WIDTH.ivalue, Settings.GRAPHICS_HEIGHT.ivalue));
         setDoubleBuffered(true);
         setBackground(Color.BLACK);
@@ -17,6 +19,7 @@ public class PascalPanel extends JPanel
         requestFocusInWindow();
 
         this.mod = 2;
+        this.modResource.setValue(this.mod);
     }
 
     public void setMod(int mod)
@@ -28,8 +31,7 @@ public class PascalPanel extends JPanel
     protected void paintComponent(Graphics graphics)
     {
         super.paintComponent(graphics);
-
-        //TODO: synchronize the mod value of PascalPanel and SettingsPanel - VERY IMPORTANT!!!
+        this.mod = this.modResource.getValue();
 
         int normalizedHeight = Settings.GRAPHICS_HEIGHT.ivalue / Settings.PIXEL_SIZE.ivalue;
 

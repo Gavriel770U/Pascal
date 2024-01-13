@@ -10,10 +10,12 @@ public class ModSlider extends JSlider implements ChangeListener
 {
     private int mod;
     private JLabel modValueLabel;
+    private SharedResource modResource;
 
-    public ModSlider(int width, int height, int minMod, int maxMod, int mod)
+    public ModSlider(int width, int height, int minMod, int maxMod, int mod, SharedResource modResource)
     {
         super(minMod, maxMod, mod);
+        this.modResource = modResource;
         this.modValueLabel = new JLabel("", JLabel.CENTER);
         modValueLabel.setPreferredSize(new Dimension(width, 50));
         modValueLabel.setForeground(Color.WHITE);
@@ -31,11 +33,12 @@ public class ModSlider extends JSlider implements ChangeListener
         setPaintLabels(true);
 
         this.mod = mod;
+        this.modResource.setValue(this.mod);
     }
 
     public int getMod()
     {
-        return this.mod;
+        return this.modResource.getValue();
     }
 
     @Override
@@ -43,5 +46,6 @@ public class ModSlider extends JSlider implements ChangeListener
     {
         this.mod = this.getValue();
         this.modValueLabel.setText("MOD = " + this.mod);
+        this.modResource.setValue(this.mod);
     }
 }
