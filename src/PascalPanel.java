@@ -2,12 +2,18 @@ import javax.swing.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.util.HashMap;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class PascalPanel extends JPanel
 {
     private final static int ZERO = 0; 
+    private final static int DEC = 1;
+
     private SharedResource modResource;
     private int mod;
+    private HashMap<Long, Color> colorsMap;
 
     public PascalPanel(SharedResource modResource)
     {
@@ -20,6 +26,8 @@ public class PascalPanel extends JPanel
 
         this.mod = Settings.MOD_SLIDER_INIT_MOD.ivalue;
         this.modResource.setValue(this.mod);
+        this.colorsMap = new HashMap<Long, Color>(Settings.MOD_SLIDER_MAX_MOD.ivalue - Settings.MOD_SLIDER_MIN_MOD.ivalue);
+        this.initColorsMap();
     }
 
     public void setMod(int mod)
@@ -47,14 +55,7 @@ public class PascalPanel extends JPanel
 
         for (i = 0; i < pascalArr.length; i++)
         {
-            if (1 == pascalArr[i])
-            {
-                graphics.setColor(Color.MAGENTA);
-            }
-            else
-            {
-                graphics.setColor(Color.BLUE);  
-            }
+            graphics.setColor(this.colorsMap.get(pascalArr[i]));
 
             graphics.fillRect(x, y, Settings.PIXEL_SIZE.ivalue, Settings.PIXEL_SIZE.ivalue);
             x += Settings.PIXEL_SIZE.ivalue;
@@ -70,5 +71,24 @@ public class PascalPanel extends JPanel
         }
 
         repaint();
+    }
+
+    private void initColorsMap()
+    {
+        Random rand = new Random();
+        Long i = (long) Settings.MOD_SLIDER_MIN_MOD.ivalue - DEC;
+
+        for(; i < Settings.MOD_SLIDER_MAX_MOD.ivalue; i++)
+        {
+            this.colorsMap.put(i, new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
+            try
+            {
+                TimeUnit.MILLISECONDS.sleep(10);
+            }            
+            catch(InterruptedException e)
+            {
+
+            }
+        }
     }
 }
