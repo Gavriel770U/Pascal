@@ -18,7 +18,7 @@ public class PascalPanel extends JPanel
         setFocusable(true);
         requestFocusInWindow();
 
-        this.mod = 2;
+        this.mod = Settings.MOD_SLIDER_INIT_MOD.ivalue;
         this.modResource.setValue(this.mod);
     }
 
