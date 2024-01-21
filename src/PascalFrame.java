@@ -1,10 +1,11 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+
 import javax.swing.*;
 
-public class PascalFrame extends JFrame 
+public class PascalFrame extends JFrame
 {
-    private SharedResource sharedMod;
+    private SharedResource<Integer> sharedMod;
 
     public PascalFrame()
     {
@@ -15,7 +16,7 @@ public class PascalFrame extends JFrame
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
             
-        this.sharedMod = new SharedResource();
+        this.sharedMod = new SharedResource<Integer>(Settings.MOD_SLIDER_INIT_MOD.ivalue);
 
         JPanel graphicsPanel = new PascalPanel(sharedMod);
         JPanel settingsPanel = new SettingsPanel(sharedMod);

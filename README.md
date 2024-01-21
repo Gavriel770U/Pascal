@@ -13,6 +13,9 @@ ________________________________________________________________
 * Run `windows_run.bat` to run the `.jar` file.
 
 ### Linux
+##### Option 1 - `.sh` Files
+* Run `linux_compile.sh` to build and compile the code.
+* Run `linux_run.sh` to run the `jar` file.
 
 ### Other OSs
 

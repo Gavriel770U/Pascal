@@ -11,11 +11,11 @@ public class PascalPanel extends JPanel
     private final static int ZERO = 0; 
     private final static int DEC = 1;
 
-    private SharedResource modResource;
+    private SharedResource<Integer> modResource;
     private int mod;
     private HashMap<Long, Color> colorsMap;
 
-    public PascalPanel(SharedResource modResource)
+    public PascalPanel(SharedResource<Integer> modResource)
     {
         this.modResource = modResource;
         setPreferredSize(new Dimension(Settings.GRAPHICS_WIDTH.ivalue, Settings.GRAPHICS_HEIGHT.ivalue));

@@ -1,13 +1,18 @@
-public class SharedResource
+public class SharedResource <T>
 {
-    private int value;
+    private T value;
 
-    public synchronized int getValue()
+    public SharedResource(T value)
+    {
+        this.value = value;
+    }
+
+    public synchronized T getValue()
     {
         return this.value;
     }
 
-    public synchronized void setValue(int value)
+    public synchronized void setValue(T value)
     {
         this.value = value;
     }

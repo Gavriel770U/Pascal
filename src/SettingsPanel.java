@@ -1,17 +1,23 @@
+import javax.swing.JButton;
+import javax.swing.JColorChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SettingsPanel extends JPanel
+public class SettingsPanel extends JPanel implements ActionListener
 {
     private ModSlider modSlider;
-    private SharedResource modResource;
+    private SharedResource<Integer> modResource;
 
-    public SettingsPanel(SharedResource mod)
+    public SettingsPanel(SharedResource<Integer> mod)
     {
         this.modResource = mod;
 
@@ -31,11 +37,23 @@ public class SettingsPanel extends JPanel
         requestFocusInWindow();
         add(this.modSlider);
 
-        add(new JLabel("TODO: Add Color chooser For Each MOD Result"));
+        JButton button = new JButton("Pad Color");
+        button.setBounds(0, 0, 100, 30);
+        button.addActionListener(this);            
+        add(button);
+        // add(new JLabel("TODO: Add Color chooser For Each MOD Result"));
     }    
+
+    public void actionPerformed(ActionEvent e)
+    {  
+        Color c = JColorChooser.showDialog(this,"Choose",Color.CYAN);  
+        System.out.println(c);
+    }
 
     public int getSliderMod()
     {
         return this.modSlider.getMod();
     }
+
+
 }

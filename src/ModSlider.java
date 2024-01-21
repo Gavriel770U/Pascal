@@ -10,9 +10,9 @@ public class ModSlider extends JSlider implements ChangeListener
 {
     private int mod;
     private JLabel modValueLabel;
-    private SharedResource modResource;
+    private SharedResource<Integer> modResource;
 
-    public ModSlider(int width, int height, int minMod, int maxMod, int mod, SharedResource modResource)
+    public ModSlider(int width, int height, int minMod, int maxMod, int mod, SharedResource<Integer> modResource)
     {
         super(minMod, maxMod, mod);
         this.modResource = modResource;
