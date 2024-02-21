@@ -24,7 +24,7 @@ public class ColorsPanel extends JPanel implements ActionListener
         button.addActionListener(this);
         
         add(new JLabel("TODO: Mod value to change its color JCombobox"));       
-        add(new JLabel("TODO: Add label for beauty :)"));
+        add(new JLabel("MOD VALUE | RGB VALUES"));
         add(button);
         add(new JLabel("TODO: Add Horizontal slider for RGB values choosing and viewing"));
     }
