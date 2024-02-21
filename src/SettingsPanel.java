@@ -12,7 +12,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SettingsPanel extends JPanel implements ActionListener
+public class SettingsPanel extends JPanel
 {
     private ModSlider modSlider;
     private SharedResource<Integer> modResource;
@@ -36,19 +36,8 @@ public class SettingsPanel extends JPanel implements ActionListener
         setLayout(new GridLayout(1, 2));
         requestFocusInWindow();
         add(this.modSlider);
-
-        JButton button = new JButton("Pad Color");
-        button.setBounds(0, 0, 100, 30);
-        button.addActionListener(this);            
-        add(button);
-        // add(new JLabel("TODO: Add Color chooser For Each MOD Result"));
+        add(new ColorsPanel());
     }    
-
-    public void actionPerformed(ActionEvent e)
-    {  
-        Color c = JColorChooser.showDialog(this,"Choose",Color.CYAN);  
-        System.out.println(c);
-    }
 
     public int getSliderMod()
     {
