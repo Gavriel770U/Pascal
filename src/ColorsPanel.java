@@ -14,7 +14,7 @@ public class ColorsPanel extends JPanel implements ActionListener
     {   
         setPreferredSize(new Dimension(Settings.SETTINGS_WIDTH.ivalue, Settings.SETTINGS_HEIGHT.ivalue));
         setDoubleBuffered(true);
-        setBackground(Color.GRAY);
+        setBackground(Color.BLACK);
         setFocusable(true);
         setLayout(new GridLayout(2, 2));
         requestFocusInWindow();
