@@ -1,7 +1,9 @@
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -22,8 +24,10 @@ public class ColorsPanel extends JPanel implements ActionListener, ItemListener
         setDoubleBuffered(true);
         setBackground(Color.BLACK);
         setFocusable(true);
-        setLayout(getLayout());
+        setLayout(new java.awt.GridBagLayout());
         requestFocusInWindow();
+
+        GridBagConstraints constraints = new GridBagConstraints();
 
         JButton button = new JButton("Pad Color");
         button.setPreferredSize(new Dimension(100, 30));
@@ -42,11 +46,25 @@ public class ColorsPanel extends JPanel implements ActionListener, ItemListener
         modComboBox.addItemListener(this);
         modComboBox.setEditable(false);
         modComboBox.setPreferredSize(new Dimension(50, 20));
+            
+        constraints.fill = GridBagConstraints.BOTH;
+        constraints.insets = new Insets(5, 5, 5, 5);
+        constraints.weighty = 1;
+        constraints.weightx = 1;
+        constraints.gridwidth = 1;
 
-        add(modComboBox);       
-        add(new JLabel("MOD VALUE | RGB VALUES"));
-        add(button);
-        add(new JLabel("TODO: Add Horizontal slider for RGB values choosing and viewing"));
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        add(modComboBox, constraints);   
+        constraints.gridx = 1;
+        constraints.gridy = 0;    
+        add(new JLabel("MOD VALUE | RGB VALUES"), constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        add(button, constraints);
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        add(new JLabel("TODO: Add Horizontal slider for RGB values choosing and viewing"), constraints);
     }
 
     public void actionPerformed(ActionEvent e)
