@@ -23,10 +23,10 @@ public class ColorsPanel extends JPanel implements ActionListener
         button.setBounds(0, 0, 100, 30);
         button.addActionListener(this);
         
-        add(new JLabel("TODO: Mod Value Combobox"));       
+        add(new JLabel("TODO: Mod value to change its color JCombobox"));       
+        add(new JLabel("TODO: Add label for beauty :)"));
         add(button);
-        add(new JLabel("TODO: Add Color chooser For Each MOD Result"));
-        add(new JLabel("TODO: Add Horizontal slider for RGB values choosing"));
+        add(new JLabel("TODO: Add Horizontal slider for RGB values choosing and viewing"));
     }
 
     public void actionPerformed(ActionEvent e)
