@@ -33,7 +33,7 @@ public class SettingsPanel extends JPanel
         setDoubleBuffered(true);
         setBackground(Color.GRAY);
         setFocusable(true);
-        setLayout(new GridLayout(1, 2));
+        setLayout(new GridLayout(1, 1));
         requestFocusInWindow();
         add(this.modSlider);
     }    
