@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.HashMap;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class PascalPanel extends JPanel
 {
@@ -80,15 +79,13 @@ public class PascalPanel extends JPanel
 
         for(; i < Settings.MOD_SLIDER_MAX_MOD.ivalue; i++)
         {
-            this.colorsMap.put(i, new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
-            try
+            Color color;
+            do
             {
-                TimeUnit.MILLISECONDS.sleep(10);
-            }            
-            catch(InterruptedException e)
-            {
+                color = new Color(rand.nextInt(Settings.RGB_VALUE_BOUND.ivalue), rand.nextInt(Settings.RGB_VALUE_BOUND.ivalue), rand.nextInt(Settings.RGB_VALUE_BOUND.ivalue));
+            } while(this.colorsMap.containsValue(color));
 
-            }
+            this.colorsMap.put(i, color);
         }
     }
 }

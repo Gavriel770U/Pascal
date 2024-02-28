@@ -1,4 +1,3 @@
-import java.util.*;
 class Main
 {
     public static<T> void println(T info)
