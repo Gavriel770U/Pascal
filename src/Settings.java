@@ -13,7 +13,8 @@ public enum Settings
     MOD_SLIDER_INIT_MOD (2),
     MOD_SLIDER_MINOR_TICKS_SPACING (10),
     MOD_SLIDER_MAJOR_TICKS_SPACING (25),
-    PIXEL_SIZE (1);
+    PIXEL_SIZE (1),
+    RGB_VALUE_BOUND (256);
 
     public final int ivalue;
 

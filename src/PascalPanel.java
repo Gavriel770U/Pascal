@@ -83,7 +83,7 @@ public class PascalPanel extends JPanel
             Color color;
             do
             {
-                color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+                color = new Color(rand.nextInt(Settings.RGB_VALUE_BOUND.ivalue), rand.nextInt(Settings.RGB_VALUE_BOUND.ivalue), rand.nextInt(Settings.RGB_VALUE_BOUND.ivalue));
             } while(this.colorsMap.containsValue(color));
 
             this.colorsMap.put(i, color);
