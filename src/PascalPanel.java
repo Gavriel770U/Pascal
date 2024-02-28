@@ -80,12 +80,19 @@ public class PascalPanel extends JPanel
 
         for(; i < Settings.MOD_SLIDER_MAX_MOD.ivalue; i++)
         {
-            this.colorsMap.put(i, new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
+            Color color;
+            do
+            {
+                color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+            } while(this.colorsMap.containsValue(color));
+
+            this.colorsMap.put(i, color);
             try
             {
-                TimeUnit.MILLISECONDS.sleep(10);
+                // TimeUnit.MILLISECONDS.sleep(10);
+                
             }            
-            catch(InterruptedException e)
+            catch(Exception e)
             {
 
             }
