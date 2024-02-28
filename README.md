@@ -17,6 +17,31 @@ ________________________________________________________________
 * Run `linux_compile.sh` to build and compile the code.
 * Run `linux_run.sh` to run the `jar` file.
 
+###### Instructions:
+Make linux compile executable:
+
+```bash
+chmod +x ./linux_compile.sh
+```
+
+Run linux compile executable:
+
+```bash
+./linux_compile.sh
+```
+
+Make linux run executable:
+
+```bash
+chmod +x ./linux_run.sh
+```
+
+Run linux run executable:
+
+```bash
+./linux_run.sh
+```
+
 ### Other OSs
 
 ________________________________________________________________
