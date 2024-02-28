@@ -36,7 +36,6 @@ public class SettingsPanel extends JPanel
         setLayout(new GridLayout(1, 2));
         requestFocusInWindow();
         add(this.modSlider);
-        add(new ColorsPanel());
     }    
 
     public int getSliderMod()
