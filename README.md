@@ -1,5 +1,19 @@
 # Pascal
 ## Fractals using Pascle's triangle.
+## Preview
+### Mod 2
+![Mod 2](assets/preview_mod2.png)
+
+### Mod 4
+![Mod 4](assets/preview_mod4.png)
+
+### Mod 8
+![Mod 8](assets/preview_mod8.png)
+
+### Mod 16
+![Mod 16](assets/preview_mod16.png)
+
+________________________________________________________________
 
 ## Pascal's Triangle MOD 2 (Sierpinski Triangle)
 ![Sierpinski Triangle](assets/triangle_pixelsize1_mod2.png)
