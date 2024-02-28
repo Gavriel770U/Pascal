@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.HashMap;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class PascalPanel extends JPanel
 {
