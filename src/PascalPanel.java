@@ -87,15 +87,6 @@ public class PascalPanel extends JPanel
             } while(this.colorsMap.containsValue(color));
 
             this.colorsMap.put(i, color);
-            try
-            {
-                // TimeUnit.MILLISECONDS.sleep(10);
-                
-            }            
-            catch(Exception e)
-            {
-
-            }
         }
     }
 }
